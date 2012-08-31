@@ -1,7 +1,13 @@
 #ifndef __CONTROLLEROBSERVER_H
 #define __CONTROLLEROBSERVER_H
 
-#include "Controller.h"
+
+#include <Handler.h>
+#include <Looper.h>
+#include <Message.h>
+#include <Messenger.h>
+
+#include <stdio.h>
 
 
 enum {
@@ -16,17 +22,6 @@ enum {
 	kMsgControllerVideoDepthChanged,
 	kMsgControllerOutputFileNameChanged
 };
-
-
-#include "ControllerObserver.h"
-
-#include <Handler.h>
-#include <Looper.h>
-#include <Message.h>
-#include <Messenger.h>
-
-#include <stdio.h>
-
 
 class ControllerObserver {
  public:

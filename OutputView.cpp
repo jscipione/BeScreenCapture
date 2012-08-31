@@ -1,9 +1,4 @@
-#include "ControllerObserver.h"
-#include "messages.h"
 #include "OutputView.h"
-#include "PreviewView.h"
-#include "Settings.h"
-#include "Utils.h"
 
 #include <Bitmap.h>
 #include <Box.h>
@@ -32,6 +27,14 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+
+#include "Controller.h"
+#include "ControllerObserver.h"
+#include "messages.h"
+#include "PreviewView.h"
+#include "Settings.h"
+#include "Utils.h"
+
 
 const static int32 kAreaSelectionChanged = 'CaCh';
 const static int32 kFileTypeChanged = 'FtyC';
@@ -129,7 +132,7 @@ OutputView::OutputView(Controller *controller)
 	fWholeScreen->SetValue(B_CONTROL_ON);
 	
 	UpdateSettings();
-	
+
 	fController->SetCaptureArea(BScreen(Window()).Frame());
 	fController->SetMediaFormatFamily(FormatFamily());
 	fController->SetOutputFileName(fFileName->Text());

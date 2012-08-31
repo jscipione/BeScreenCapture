@@ -1,21 +1,25 @@
 #ifndef __OUTPUTVIEW_H
 #define __OUTPUTVIEW_H
 
+
 #include <MediaDefs.h>
 #include <MediaFormats.h>
 #include <Path.h>
 #include <Size.h>
 #include <View.h>
 
+
 class BButton;
 class BCheckBox;
 class BMenu;
 class BMenuField;
+class BMenuItem;
 class BOptionPopUp;
 class BRadioButton;
 class BTextControl;
 class Controller;
 class PreviewView;
+
 class OutputView : public BView {
 public:	
 	OutputView(Controller *controller);
