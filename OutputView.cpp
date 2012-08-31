@@ -1,5 +1,6 @@
 #include "OutputView.h"
 
+#include <Alignment.h>
 #include <Bitmap.h>
 #include <Box.h>
 #include <Button.h>
@@ -46,15 +47,17 @@ OutputView::OutputView(Controller *controller)
 	BView("Capture Options", B_WILL_DRAW),
 	fController(controller)
 {
-	SetLayout(new BGroupLayout(B_HORIZONTAL));
+	SetLayout(new BGroupLayout(B_VERTICAL));
 	
 	BBox *selectBox = new BBox("selection");
 	selectBox->SetLabel("Selection");
+	selectBox->SetExplicitAlignment(BAlignment(B_ALIGN_LEFT, B_ALIGN_TOP));
 	AddChild(selectBox);
 	
 	BBox *outputBox = new BBox("output");
 	outputBox->SetLabel("Output");
-	AddChild(outputBox);	
+	outputBox->SetExplicitAlignment(BAlignment(B_ALIGN_LEFT, B_ALIGN_TOP));
+	AddChild(outputBox);
 
 	Settings settings;
 	
