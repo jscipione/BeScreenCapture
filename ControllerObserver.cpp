@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 
+
 ControllerObserver::ControllerObserver(BHandler *target)
 	:
 	fHandler(target),
@@ -118,5 +119,3 @@ ControllerObserver::_SendMessage(BMessage *message)
 	} else
 		fMessenger->SendMessage(message);
 }
-
-
