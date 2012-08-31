@@ -18,4 +18,38 @@ enum {
 };
 
 
+#include "ControllerObserver.h"
+
+#include <Handler.h>
+#include <Looper.h>
+#include <Message.h>
+#include <Messenger.h>
+
+#include <stdio.h>
+
+
+class ControllerObserver {
+ public:
+							ControllerObserver(BHandler *target);
+							ControllerObserver(const BMessenger &messenger);
+	virtual					~ControllerObserver();
+
+			void			CaptureStarted();
+			void			CaptureFinished();
+			void			CapturePaused();
+			void			CaptureResumed();
+			void			EncodeStarted(const int32 numFiles);
+			void			EncodeFinished(const status_t status);
+			void			AreaSelectionChanged();
+			void			VideoDepthChanged();
+			void			OutputFileNameChanged();
+			void			ForwardMessage(BMessage *message);
+
+ private:
+			void			_SendMessage(BMessage *message);
+
+			BHandler*		fHandler;
+			BMessenger*		fMessenger;
+};
+
 #endif // __CONTROLLEROBSERVER_H
