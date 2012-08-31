@@ -85,8 +85,9 @@ OutputView::OutputView(Controller *controller)
 	fRectView = new PreviewView();
 	
 	BView *layoutView = BLayoutBuilder::Group<>()
-		.SetInsets(15, 15, 15, 15)
-		.AddGroup(B_VERTICAL, 15)
+		.SetInsets(B_USE_DEFAULT_SPACING, B_USE_DEFAULT_SPACING,
+			B_USE_DEFAULT_SPACING, B_USE_DEFAULT_SPACING)
+		.AddGroup(B_VERTICAL, B_USE_DEFAULT_SPACING)
 			.Add(fFileName)
 			.Add(fOutputFileType)
 			.Add(fCodecMenu)
@@ -97,7 +98,8 @@ OutputView::OutputView(Controller *controller)
 	outputBox->AddChild(layoutView);
 
 	layoutView = BLayoutBuilder::Group<>()
-		.SetInsets(15, 15, 15, 15)
+		.SetInsets(B_USE_DEFAULT_SPACING, B_USE_DEFAULT_SPACING,
+			B_USE_DEFAULT_SPACING, B_USE_DEFAULT_SPACING)
 		.AddGroup(B_VERTICAL)
 			.AddGroup(B_HORIZONTAL)
 				.AddGroup(B_VERTICAL)
